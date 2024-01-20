@@ -1,5 +1,5 @@
 import React from "react";
-import hingeLogo from "./hingeLogo.png";
+import hingeLogo from "./Images/hingeLogo.png";
 
 function Header() {
   return (
@@ -12,4 +12,3 @@ function Header() {
 }
 
 export default Header;
-
