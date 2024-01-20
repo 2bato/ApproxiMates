@@ -10,6 +10,8 @@ function App() {
       <PostMain type="" />
       <PostBox />
 
+      <Header />
+
       <div className="fixed bottom-0 left-0 w-full mb-3">
         <Footer />
       </div>
