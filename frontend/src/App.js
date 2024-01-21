@@ -9,7 +9,7 @@ import axios from "axios";
 import ProfilePage from "./components/ProfilePage";
 import React from 'react';
 import { AuthProvider } from 'react-auth-kit'
-import RouteComponent from './routes';
+//import RouteComponent from './routes';
 import { GoogleLogin } from '@react-oauth/google';
 
 
@@ -103,6 +103,10 @@ function App() {
       <PopupInput />
 
       <ProfilePage />
+      
+      <div style = {{height: "50px"}}>
+
+      </div>
 
       <div className="fixed bottom-0 left-0 w-full mb-3">
         <Footer />
