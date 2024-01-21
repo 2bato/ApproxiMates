@@ -7,9 +7,8 @@ import PopupInput from "./components/PopupInput";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ProfilePage from "./components/ProfilePage";
-import React from 'react';
-
-
+import React from "react";
+import FilterButtons from "./components/FilterButtons";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -79,12 +78,13 @@ function App() {
       location: "49.266688,-123.2470016",
       comments: ["hooray", "yippee"],
       likes: 5,
-    }
+    },
   ];
 
   return (
     <div className="App">
       <Header />
+      <FilterButtons />
       {console.log(posts)}
       <PostMain
         type="Service"
@@ -100,16 +100,12 @@ function App() {
       <PopupInput />
 
       <ProfilePage />
-      
-      <div style = {{height: "50px"}}>
 
-      </div>
+      <div style={{ height: "50px" }}></div>
 
       <div className="fixed bottom-0 left-0 w-full mb-3">
         <Footer />
       </div>
-
-      
     </div>
   );
 }
