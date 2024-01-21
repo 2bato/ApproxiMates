@@ -2,10 +2,12 @@ import "./App.css";
 import Footer from "./components/Footer";
 import PostMain from "./components/PostMain";
 import Header from "./components/Header";
-import PopupInput from "./components/PopupInput"
+import PopupInput from "./components/popupInput"
 import React from 'react';
 import { AuthProvider } from 'react-auth-kit'
 import RouteComponent from './routes';
+import { GoogleLogin } from '@react-oauth/google';
+
 
 
 function App() {
