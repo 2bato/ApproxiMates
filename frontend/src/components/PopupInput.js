@@ -4,6 +4,7 @@ import hingeLogo from "./Images/hingeLogo.png";
 
 function PopupInput(props) {
   const [title, setTitle] = useState("Post Title Here");
+  const [body, setBody] = useState("Post Body Here");
 
   return (
     <div className="border-2 rounded-3xl m-5 border-black">
@@ -22,8 +23,9 @@ function PopupInput(props) {
             <input type = 'text' value = {title} onChange={(e) => setTitle(e.target.value)}/>
           </div>
         </div>
-        <div className="mt-2 justify-center m-3">
+        <div className="mt-2 justify-center m-3 text-left">
           <p>{props.body}</p>
+          <input type = 'text' value = {body} onChange={(e) => setBody(e.target.value)}/>
         </div>
 
         <div className="justify-center">
