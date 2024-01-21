@@ -21,17 +21,17 @@ function PostMain(props) {
           <div className="font-bold">
             <div className="inline-flex items-center mb-2">
               {pinIcon}
-              <h2 className="ml-2">{props.locationType}</h2>
+              <h2 className="ml-2">{props.location}</h2>
             </div>
             <h3 className="text-lg">{props.title}</h3>
           </div>
         </div>
         <div className="mt-2 justify-center m-3">
-          <p>{props.description}</p>
+          <p>{props.body}</p>
         </div>
 
         <div className="justify-center">
-            <img src={hingeLogo}/>
+            <img src={props.image}/>
         </div>
 
       </div>
