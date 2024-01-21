@@ -15,7 +15,12 @@ function Header() {
   return (
     <header className="bg-white w-full header fixed fixed top-0 w-full">
       <ul style={{ display: "flex", alignItems: "center", height: "60px" }}>
-        <img class="h-16 w-16 ml-6" src={ApproxiMates} alt="Logo" onClick={goToTop}/>
+        <img
+          class="h-16 w-16 ml-6"
+          src={ApproxiMates}
+          alt="Logo"
+          onClick={goToTop}
+        />
 
         <button
           onClick={goToBottom}
