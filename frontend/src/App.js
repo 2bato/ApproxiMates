@@ -15,10 +15,13 @@ import House from "./components/Images/house2.png";
 import Profile from "./components/Images/person2.png";
 import { TabContext } from "./components/Context/Tabs";
 
+function goToTop() {
+  window.scrollTo(0, 0);
+}
+
 function App() {
   const [posts, setPosts] = useState([]);
   const { activeTab, switchTab } = useContext(TabContext);
-  const tabs = ["current", "home", "profile"];
   const TabContent1 = () => (
     <div>
       <Header />
@@ -29,15 +32,13 @@ function App() {
 
   const TabContent2 = () => (
     <div>
-      {/* Add home tab content */}
+      <Header />
+      <PostBox posts={posts} />
+      <CreatePost onAddNewPost={addPostHandler} />
     </div>
   );
 
-  const TabContent3 = () => (
-    <div>
-      {/* Add profile content */}
-    </div>
-  );
+  const TabContent3 = () => <div>{/* Add profile content */}</div>;
 
   const tabClickHandler = (tabIndex) => {
     switchTab(tabIndex);
@@ -118,7 +119,10 @@ function App() {
                 ? "rounded-lg bg-cover bg-gray-200 inline-flex h-12 w-12 items-center justify-center"
                 : "inline-flex h-12 w-12 items-center justify-center"
             }
-            onClick={() => tabClickHandler(0)}
+            onClick={() => {
+              tabClickHandler(0);
+              goToTop();
+            }}
           >
             <img class="h-10 w-10" src={Pin} alt="Logo" />
           </button>
@@ -129,7 +133,10 @@ function App() {
                 ? "rounded-lg bg-cover bg-gray-200 inline-flex h-12 w-12 items-center justify-center"
                 : "inline-flex h-12 w-12 items-center justify-center"
             }
-            onClick={() => tabClickHandler(1)}
+            onClick={() => {
+              tabClickHandler(1);
+              goToTop();
+            }}
           >
             <img class="h-10 w-10" src={House} alt="Logo" />
           </button>
@@ -140,7 +147,10 @@ function App() {
                 ? "rounded-lg bg-cover bg-gray-200 inline-flex h-12 w-12 items-center justify-center"
                 : "inline-flex h-12 w-12 items-center justify-center"
             }
-            onClick={() => tabClickHandler(2)}
+            onClick={() => {
+              tabClickHandler(2);
+              goToTop();
+            }}
           >
             <img class="h-10 w-10" src={Profile} alt="Logo" />
           </button>
