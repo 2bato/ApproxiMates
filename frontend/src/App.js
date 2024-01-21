@@ -7,10 +7,9 @@ import PostBox from "./components/PostBox";
 function App() {
   return (
     <div className="App">
-      <PostMain type="" />
+      <Header />
       <PostBox />
 
-      <Header />
 
       <PostMain 
       type=""/>
@@ -18,8 +17,8 @@ function App() {
         
 
       
-        <div className="fixed bottom-0 left-0 w-full mb-3">
-          <Footer />
+      <div className="fixed bottom-0 left-0 w-full mb-3">
+        <Footer />
       </div>
     </div>
   );
