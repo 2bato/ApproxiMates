@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
-import { Link, Router } from "react-router-dom"; 
+import { Link, Router } from "react-router-dom";
 
 // export const UserContext = React.createContext({});
 
@@ -20,7 +20,6 @@ function LoginPage() {
   function handleSignOut(event) {
     setUser({});
   }
-
 
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
