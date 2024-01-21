@@ -38,7 +38,14 @@ function App() {
     </div>
   );
 
-  const TabContent3 = () => <div>{/* Add profile content */}</div>;
+  const TabContent3 = () => {
+    return (
+      <div className="mt-2 ml-2 mr-2">
+        <ProfilePage/>
+      </div>
+    );
+  };
+  
 
   const tabClickHandler = (tabIndex) => {
     switchTab(tabIndex);

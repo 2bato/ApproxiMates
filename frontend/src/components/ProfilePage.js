@@ -43,7 +43,7 @@ function ProfilePage(props) {
   return (
     <div>
       {editProfile ? editScreen : profileScreen}
-      <button onClick={() => setEditProfile(!editProfile)}>
+      <button onClick={() => setEditProfile(!editProfile)} className = "rounded-lg bg-cover bg-gray-200 inline-flex h-8 p-2 ml-6 mt-4 items-center justify-center">
         {editProfile ? "save profile" : "edit profile"}
       </button>
     </div>
