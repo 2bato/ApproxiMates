@@ -30,7 +30,7 @@ function PostMain(props) {
           <p>{props.description}</p>
         </div>
 
-        <div className="justify center w-8/12">
+        <div className="justify-center">
             <img src={hingeLogo}/>
         </div>
 
