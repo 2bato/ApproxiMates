@@ -3,6 +3,7 @@ import Footer from "./components/Footer";
 import PostMain from "./components/PostMain";
 import Header from "./components/Header";
 import PostBox from "./components/PostBox";
+import PopupInput from "./components/PopupInput";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         title="Pipe Bursted"
         body="My Name is Andrew Qi Ming Fan and my pipe burst in my basement. I am sad but I love men"
       />
+
+      <PopupInput />
 
       <div className="fixed bottom-0 left-0 w-full mb-3">
         <Footer />
