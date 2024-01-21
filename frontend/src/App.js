@@ -10,6 +10,7 @@ import Pin from "./components/Images/marker2.png";
 import House from "./components/Images/house2.png";
 import Profile from "./components/Images/person2.png";
 import { TabContext } from "./components/Context/Tabs";
+import ProfilePage from "./components/ProfilePage";
 
 function goToTop() {
   window.scrollTo(0, 0);
