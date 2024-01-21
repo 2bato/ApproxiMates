@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
-import defaultPFP from './Images/wold.jpg'
+import defaultPFP from "./Images/wold.jpg";
 import { setGlobalState, useGlobalState } from "../LogInPage";
 import { Link, Router } from "react-router-dom";
 
@@ -59,7 +59,7 @@ function ProfilePage(props) {
     <div>
       <Header />
       <h1
-        className="mt-20 mb-5 ml-4"
+        className="mt-20 mb-5 flex justify-center"
         style={{
           fontSize: "24px",
           fontWeight: "bold",
@@ -83,7 +83,7 @@ function ProfilePage(props) {
             {editProfile ? "Save Profile" : "Edit Profile"}
           </button>
         </div>
-        
+
         <div className="justify-center flex">
           <button
             class="bg-black hover:bg-black-700 text-white font-bold w-full min-h-24 rounded-full"
