@@ -7,6 +7,10 @@
   --greyColourLight: (#e9ecee);
 }
 
+*{
+  font-family: 'Jakarta Sans', sans-serif;
+}
+
 .App {
   text-align: center;
 }
