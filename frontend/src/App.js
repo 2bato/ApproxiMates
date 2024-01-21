@@ -9,6 +9,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <PostBox />
       <PostMain
         type="Service"
         locationType="Exact Location"
