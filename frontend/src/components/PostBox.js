@@ -1,13 +1,13 @@
-function PostBox() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
-      console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
-    });
-  } else {
-    console.log("Geolocation is not supported by this browser.");
-  }
-}
+import PostMain from "./PostMain";
+
+const PostBox = ({ posts }) => {
+  return (
+    <div>
+      {posts.map((post) => (
+        <PostMain post={post} />
+      ))}
+    </div>
+  );
+};
 
 export default PostBox;
