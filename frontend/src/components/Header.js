@@ -13,7 +13,7 @@ function goToTop() {
 function Header() {
   return (
     <header className="bg-white w-full header fixed fixed top-0 w-full">
-      <ul style={{ display: "flex", alignItems: "center", height: "60px" }}>
+      <div style={{ display: "flex", alignItems: "center", height: "60px" }}>
         <img
           class="h-16 w-16 ml-6"
           src={ApproxiMates}
@@ -40,16 +40,14 @@ function Header() {
             />
           </svg>
         </button>
-      </ul>
-      <div className="mt-1" style={grayStripStyle} />
+      </div>
+      <div className="mt-1" style={{
+        height: "5px",
+        width: "100%", 
+        background: "#ccc",
+      }} />
     </header>
   );
 }
-
-const grayStripStyle = {
-  height: "5px", // Adjust the height as needed
-  width: "100%", // Full width of the container
-  background: "white", // Gray color, you can change this to any color you prefer
-};
 
 export default Header;

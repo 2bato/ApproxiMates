@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import ProfilePage from "./components/ProfilePage";
 
 import "./index.css";
 import App from "./App";
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
   {
     path: "/App",
     element: <App />,
+  },
+  {
+    path: "/ProfilePage",
+    element: <ProfilePage />,
   },
 ]);
 

@@ -34,7 +34,13 @@ function App() {
     </div>
   );
 
-  const TabContent3 = () => <div>{/* Add profile content */}</div>;
+  const TabContent3 = () => {
+    return (
+      <div className="mt-2 ml-2 mr-2">
+        <ProfilePage />
+      </div>
+    );
+  };
 
   const tabClickHandler = (tabIndex) => {
     switchTab(tabIndex);
@@ -98,6 +104,27 @@ function App() {
         console.log("Error in removePost");
       });
   };
+
+  const placeholder = [
+    {
+      type: "Service",
+      locationType: "Exact Location",
+      title: "Pipe Bursted",
+      body: "My Name is Andrew Qi Ming Fan and my pipe burst in my basement. I am sad but I love men",
+      location: "49.266688,-123.2470016",
+      comments: ["hooray", "yippee"],
+      likes: 5,
+    },
+    {
+      type: "Service",
+      locationType: "Exact Location",
+      title: "Pipe Bursted",
+      body: "My Name is Andrew Qi Ming Fan and my pipe burst in my basement. I am sad but I love men",
+      location: "49.266688,-123.2470016",
+      comments: ["hooray", "yippee"],
+      likes: 5,
+    },
+  ];
 
   return (
     <div className="App">
