@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
-import defaultPFP from './Images/default.jpg'
+import defaultPFP from './Images/wold.jpg'
 import { setGlobalState, useGlobalState } from "../LogInPage";
 import { Link, Router } from "react-router-dom";
 
 function ProfilePage(props) {
   const [editProfile, setEditProfile] = useState(false);
 
-  const [username, setUsername] = useState("Ashley");
+  const [username, setUsername] = useState("TheLegend27");
   const [file, setFile] = useState(defaultPFP);
 
   const editScreen = (
@@ -59,7 +59,7 @@ function ProfilePage(props) {
     <div>
       <Header />
       <h1
-        className="mt-20 mb-5"
+        className="mt-20 mb-5 ml-4"
         style={{
           fontSize: "24px",
           fontWeight: "bold",
@@ -71,31 +71,8 @@ function ProfilePage(props) {
       <div className="space-y-6 mb-40 flex-col flex justify-center">
         {editProfile ? editScreen : profileScreen}
         <div className="pt-5">
-        <button
-          className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold w-full min-h-24 rounded-md"
-          onClick={() => setEditProfile(!editProfile)}
-          style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}
-        >
-          {editProfile ? "Save Profile" : "Edit Profile"}
-        </button>
-
-        </div>
-        <div className="justify-center flex">
           <button
-            class="bg-black hover:bg-blue-700 text-white font-bold w-full min-h-24 rounded-full"
-            style={{
-              fontSize: "24px",
-              fontWeight: "bold",
-              fontFamily: "Arial, sans-serif",
-            }}
-          >
-            My Posts
-          </button>
-        </div>
-        {editProfile ? editScreen : profileScreen}
-        <div className="pt-5">
-          <button
-            className="bg-gray-500 hover:bg-emerald-700 text-white font-bold w-full min-h-24 rounded-full"
+            className="bg-gray-500 hover:bg-emerald-700 text-white font-bold w-full min-h-24 rounded-md"
             onClick={() => setEditProfile(!editProfile)}
             style={{
               fontSize: "24px",
@@ -106,6 +83,20 @@ function ProfilePage(props) {
             {editProfile ? "save profile" : "edit profile"}
           </button>
         </div>
+
+        <div className="justify-center flex">
+          <button
+            class="bg-black hover:bg-blue-700 text-white font-bold w-full min-h-24 rounded-md"
+            style={{
+              fontSize: "24px",
+              fontWeight: "bold",
+              fontFamily: "Arial, sans-serif",
+            }}
+          >
+            My Posts
+          </button>
+        </div>
+        
         {
           //<div className="pt-10">
           //<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full min-h-24 rounded-full"
