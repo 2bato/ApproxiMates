@@ -18,7 +18,7 @@ app.use(express.json({ extended: false }));
 app.get('/', (req, res) => res.send('Hello world!'));
 
 // use Routes
-app.use('/post', post);
+app.use('/api/post', post);
 
 const port = process.env.PORT || 5000;
 
