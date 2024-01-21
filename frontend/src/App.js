@@ -1,14 +1,10 @@
 import "./App.css";
-import Footer from "./components/Footer";
-import PostMain from "./components/PostMain";
+
 import Header from "./components/Header";
 import PostBox from "./components/PostBox";
 import CreatePost from "./components/CreatePost";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import ProfilePage from "./components/ProfilePage";
-import { AuthProvider } from "react-auth-kit";
-import { GoogleLogin } from "@react-oauth/google";
 import React, { useContext } from "react";
 import Pin from "./components/Images/marker2.png";
 import House from "./components/Images/house2.png";

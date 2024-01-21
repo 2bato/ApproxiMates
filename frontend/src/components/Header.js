@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ApproxiMates from "./Images/ApproxiMates.png";
-import PostBox from "./PostBox";
-import FilterButtons from "./FilterButtons";
+
 
 function goToBottom() {
   window.scrollTo(0, document.body.scrollHeight);

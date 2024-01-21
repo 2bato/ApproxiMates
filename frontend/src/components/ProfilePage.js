@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
+import { setGlobalState, useGlobalState } from "../LogInPage";
 
 function ProfilePage(props) {
   const [editProfile, setEditProfile] = useState(false);
