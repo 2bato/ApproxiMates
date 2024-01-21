@@ -9,6 +9,13 @@ function ProfilePage(props) {
 
     return (
         <div>
+            <button onClick={() => setEditProfile(!editProfile)}>
+                edit profile
+            </button>
+            <h2>
+                change username
+            </h2>
+            <input type = 'text' value = {username} onChange = {(e) => {setUsername(e.target.value);}}/>
             <h2>
                 upload profile picture
             </h2>

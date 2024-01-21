@@ -5,7 +5,6 @@ import Header from "./components/Header";
 import PostBox from "./components/PostBox";
 import PopupInput from "./components/PopupInput";
 import ProfilePage from "./components/ProfilePage";
-import PopupInput from "./components/PopupInput"
 import React from 'react';
 import { AuthProvider } from 'react-auth-kit'
 import RouteComponent from './routes';
