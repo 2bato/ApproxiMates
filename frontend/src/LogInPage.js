@@ -53,7 +53,7 @@ function LoginPage() {
           <div className="flex items-center justify-between">
             <Link to="/App">
               <button
-                className="w-3/6 m-auto bg-white text-black font-bold py-2 px-4 rounded-lg"
+                className="w-36 m-auto bg-white text-black font-bold py-2 px-4 rounded-lg"
                 type="submit"
               >
                 Login

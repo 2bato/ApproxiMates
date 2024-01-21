@@ -31,13 +31,13 @@ function ProfilePage(props) {
               setFile(URL.createObjectURL(e.target.files[0]));
             }}
           />
+          <img src={file} style={{ maxWidth: '50%', maxHeight: '50%' }} />
           <button
             className=" bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-1 px-2 rounded"
             onClick={() => setEditProfile(!editProfile)}
           >
             {editProfile ? "Save Profile" : "Edit Profile"}
           </button>
-          <img src={file} />
         </div>
       </div>
     </div>
@@ -54,10 +54,14 @@ function ProfilePage(props) {
   return (
     <div>
       <Header />
-      <div className="space-y-6 mt-40 flex-col flex justify-center">
+      <h1 className="mt-20 mb-5" style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}>
+        Welcome {username}
+      </h1>
+      <div className="space-y-6 mb-40 flex-col flex justify-center">
         <div className="justify-center flex">
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full min-h-24 rounded-full">
-            Button
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full min-h-24 rounded-full" 
+                  style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}>
+            My Posts
           </button>
         </div>
         {editProfile ? editScreen : profileScreen}
@@ -65,15 +69,19 @@ function ProfilePage(props) {
           <button
             className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold w-full min-h-24 rounded-full"
             onClick={() => setEditProfile(!editProfile)}
+            style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}
           >
             {editProfile ? "save profile" : "edit profile"}
           </button>
         </div>
-        <div className="pt-10">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full min-h-24 rounded-full">
-            Saved Posts
-          </button>
-        </div>
+        {
+          //<div className="pt-10">
+          //<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full min-h-24 rounded-full"
+          //       style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}>
+          //</div>  Saved Posts
+          //</div></button>
+          //</div>
+        }
       </div>
       <Footer />
     </div>

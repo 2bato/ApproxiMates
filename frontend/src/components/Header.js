@@ -42,15 +42,13 @@ function Header() {
           </svg>
         </button>
       </div>
-      <div className="mt-1" style={grayStripStyle} />
+      <div className="mt-1" style={{
+        height: "5px",
+        width: "100%", 
+        background: "#ccc",
+      }} />
     </header>
   );
 }
-
-const grayStripStyle = {
-  height: "5px", // Adjust the height as needed
-  width: "100%", // Full width of the container
-  background: "#ccc", // Gray color, you can change this to any color you prefer
-};
 
 export default Header;
