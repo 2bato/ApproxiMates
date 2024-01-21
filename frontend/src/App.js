@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-
+      <PostBox />
       <PostMain 
       type="Service"
       locationType="Exact Location"
@@ -17,8 +17,8 @@ function App() {
         
 
       
-        <div className="fixed bottom-0 left-0 w-full mb-3">
-          <Footer />
+      <div className="fixed bottom-0 left-0 w-full mb-3">
+        <Footer />
       </div>
     </div>
   );
