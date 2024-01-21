@@ -7,11 +7,15 @@ function goToBottom() {
   window.scrollTo(0, document.body.scrollHeight);
 }
 
+function goToTop() {
+  window.scrollTo(0, 0);
+}
+
 function Header() {
   return (
     <header className="bg-white w-full header fixed fixed top-0 w-full">
       <ul style={{ display: "flex", alignItems: "center", height: "60px" }}>
-        <img class="h-16 w-16 ml-6" src={ApproxiMates} alt="Logo" />
+        <img class="h-16 w-16 ml-6" src={ApproxiMates} alt="Logo" onClick={goToTop}/>
 
         <button
           onClick={goToBottom}
