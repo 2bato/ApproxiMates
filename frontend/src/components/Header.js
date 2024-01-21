@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import ApproxiMates_Logo from "./Images/ApproxiMates_Logo.png";
+import ApproxiMates from "./Images/ApproxiMates.png";
 import PostBox from "./PostBox";
 
 function Header() {
@@ -7,7 +7,7 @@ function Header() {
   return (
     <header className="header">
       <ul style={{ display: 'flex', alignItems: 'center' }}>
-        <img class="h-16 w-16" src={ApproxiMates_Logo} alt="Logo" />
+        <img class="h-16 w-16" src={ApproxiMates} alt="Logo" />
 
 
         <button className="ml-4 inline-flex items-center mt-2" style={{ width: '250px' }}>
