@@ -1,19 +1,11 @@
 import React from "react";
-<<<<<<< HEAD
-import ApproxiMates_Logo from "./Images/ApproxiMates_Logo.png";
-=======
 import ApproxiMates from "./Images/ApproxiMates_Logo.png"
->>>>>>> 26d4064eb9cfbb9162fee8b3634fe1235824bc22
 
 function Header() {
   return (
     <header className="text-left">
       <ul className="cursor-pointer m-2">
-<<<<<<< HEAD
-        <img class="h-24 w-24" src={ApproxiMates_Logo} alt="Logo" />
-=======
         <img class="h-16 w-16" src={ApproxiMates} alt="Logo" />
->>>>>>> 26d4064eb9cfbb9162fee8b3634fe1235824bc22
       </ul>
       <div className="input-with-svg">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
