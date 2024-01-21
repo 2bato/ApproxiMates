@@ -86,7 +86,7 @@ function ProfilePage(props) {
 
         <div className="justify-center flex">
           <button
-            class="bg-black hover:bg-blue-700 text-white font-bold w-full min-h-24 rounded-full"
+            class="bg-black hover:bg-black-700 text-white font-bold w-full min-h-24 rounded-full"
             style={{
               fontSize: "24px",
               fontWeight: "bold",
