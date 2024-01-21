@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
-import defaultPFP from "./Images/marker.png";
+import defaultPFP from "./Images/Prof.png";
 import { setGlobalState, useGlobalState } from "../LogInPage";
 import { Link, Router } from "react-router-dom";
 
@@ -51,7 +51,7 @@ function ProfilePage(props) {
 
   const profileScreen = (
     <div className="flex justify-center items-center">
-      <img src={file} style={{ maxWidth: "60%", maxHeight: "60%" }} />
+      <img src={file} style={{ maxWidth: "70%", maxHeight: "70%" }} />
     </div>
   );
 
@@ -99,7 +99,7 @@ function ProfilePage(props) {
 
         <div className="flex justify-center">
           <Link to="/">
-            <div className="border-4 border-black rounded-lg w-fit p-3 cursor-pointer">
+            <div className="mt-20 border-4 border-black rounded-lg w-fit p-3 cursor-pointer">
               <h1>Back to Log In</h1>
             </div>
           </Link>
