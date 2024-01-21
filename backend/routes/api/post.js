@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 // Load post model
-const post = require('../models/post');
+const post = require('../../models/post');
 
 // @route GET api/post/test
 // @description tests post route
