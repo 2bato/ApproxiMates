@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import ApproxiMates_Logo from "./Images/ApproxiMates_Logo.png";
+import ApproxiMates from "./Images/ApproxiMates.png";
 import PostBox from "./PostBox";
 
 function Header() {
   const [buttonText, setButtonText] = useState(false);
   return (
     <header className="header">
-      <ul style={{ display: "flex", alignItems: "center" }}>
-        <img class="h-16 w-16" src={ApproxiMates_Logo} alt="Logo" />
+      <ul style={{ display: "flex", alignItems: "center", height: "60px" }}>
+        <img class="h-16 w-16" src={ApproxiMates} alt="Logo" />
 
         <button
           className="ml-4 inline-flex items-center mt-2"
@@ -31,6 +31,7 @@ function Header() {
         </button>
 
         <button
+          style={{ marginTop: "5px" }}
           onClick={() => {
             setButtonText(!buttonText);
           }}
@@ -41,7 +42,7 @@ function Header() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6"
+            className="w-8 h-8 flex-shrink-0"
           >
             <path
               strokeLinecap="round"
