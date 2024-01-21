@@ -2,8 +2,6 @@ import React from "react";
 
 import ApproxiMates_Logo from "./Images/ApproxiMates_Logo.png";
 
-import ApproxiMates from "./Images/ApproxiMates_Logo.png";
-
 function Header() {
   return (
     <header className="text-left">
