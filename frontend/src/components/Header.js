@@ -27,9 +27,9 @@ function Header() {
 }
 
 const grayStripStyle = {
-  height: '10px',        // Adjust the height as needed
-  width: '100%',        // Full width of the container
-  background: '#ccc',   // Gray color, you can change this to any color you prefer
+  height: "10px", // Adjust the height as needed
+  width: "100%", // Full width of the container
+  background: "#ccc", // Gray color, you can change this to any color you prefer
 };
 
 export default Header;
