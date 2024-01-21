@@ -3,6 +3,7 @@ import Footer from "./components/Footer";
 import PostMain from "./components/PostMain";
 import Header from "./components/Header";
 import PostBox from "./components/PostBox";
+import PopupInput from "./components/PopupInput";
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
         location="49.266688,-123.2470016"
       />
       <PostBox />
+
+      <PopupInput />
 
       <div className="fixed bottom-0 left-0 w-full mb-3">
         <Footer />
