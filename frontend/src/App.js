@@ -7,9 +7,12 @@ import CreatePost from "./components/CreatePost";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ProfilePage from "./components/ProfilePage";
-import React from "react";
-import { AuthProvider } from "react-auth-kit";
-import { GoogleLogin } from "@react-oauth/google";
+import React from 'react';
+import { AuthProvider } from 'react-auth-kit'
+import RouteComponent from './routes';
+import { GoogleLogin } from '@react-oauth/google';
+
+
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -71,6 +74,10 @@ function App() {
       <CreatePost onAddNewPost={addPostHandler}/>
 
       <ProfilePage />
+      
+      <div style = {{height: "50px"}}>
+
+      </div>
 
       <div className="fixed bottom-0 left-0 w-full mb-3">
         <Footer />
