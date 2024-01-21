@@ -8,9 +8,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import ProfilePage from "./components/ProfilePage";
 import React from 'react';
-import { AuthProvider } from 'react-auth-kit'
-//import RouteComponent from './routes';
-import { GoogleLogin } from '@react-oauth/google';
 
 
 
