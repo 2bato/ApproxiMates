@@ -15,7 +15,9 @@ function App() {
         locationType="Exact Location"
         title="Pipe Bursted"
         body="My Name is Andrew Qi Ming Fan and my pipe burst in my basement. I am sad but I love men"
+        location="49.266688,-123.2470016"
       />
+      <PostBox />
 
       <PopupInput />
 
