@@ -6,6 +6,11 @@ import PostBox from "./components/PostBox";
 import PopupInput from "./components/PopupInput";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import ProfilePage from "./components/ProfilePage";
+import React from 'react';
+import { AuthProvider } from 'react-auth-kit'
+import RouteComponent from './routes';
+
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -94,9 +99,15 @@ function App() {
       <PostBox posts={placeholder} />
       <PopupInput />
 
+      <ProfilePage />
+
       <div className="fixed bottom-0 left-0 w-full mb-3">
         <Footer />
       </div>
+
+      <AuthProvider store={store}>
+      <RoutesComponent/>
+    </AuthProvider>
     </div>
   );
 }
