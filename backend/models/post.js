@@ -23,6 +23,9 @@ const PostSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  home: {
+    type: Boolean,
+  }
 });
 
 module.exports = mongoose.model("post", PostSchema);
