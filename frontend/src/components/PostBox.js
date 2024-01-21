@@ -1,9 +1,10 @@
 import PostMain from "./PostMain";
 
 const PostBox = ({ posts }) => {
+    const reversedPosts = [...posts].reverse();
   return (
-    <div>
-      {posts.map((post) => (
+    <div className="my-20">
+      {reversedPosts.map((post) => (
         <PostMain 
         type={post.type}
         locationType={post.locationType}
