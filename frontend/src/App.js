@@ -1,14 +1,10 @@
 import "./App.css";
-import Footer from "./components/Footer";
-import PostMain from "./components/PostMain";
+
 import Header from "./components/Header";
 import PostBox from "./components/PostBox";
 import CreatePost from "./components/CreatePost";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import ProfilePage from "./components/ProfilePage";
-import { AuthProvider } from "react-auth-kit";
-import { GoogleLogin } from "@react-oauth/google";
 import React, { useContext } from "react";
 import Pin from "./components/Images/marker2.png";
 import House from "./components/Images/house2.png";
@@ -42,7 +38,13 @@ function App() {
     </div>
   );
 
-  const TabContent3 = () => <div>{/* Add profile content */}</div>;
+  const TabContent3 = () => {
+    return (
+      <div className="mt-2 ml-2 mr-2">
+        <ProfilePage />
+      </div>
+    );
+  };
 
   const tabClickHandler = (tabIndex) => {
     switchTab(tabIndex);
@@ -106,6 +108,27 @@ function App() {
         console.log("Error in removePost");
       });
   };
+
+  const placeholder = [
+    {
+      type: "Service",
+      locationType: "Exact Location",
+      title: "Pipe Bursted",
+      body: "My Name is Andrew Qi Ming Fan and my pipe burst in my basement. I am sad but I love men",
+      location: "49.266688,-123.2470016",
+      comments: ["hooray", "yippee"],
+      likes: 5,
+    },
+    {
+      type: "Service",
+      locationType: "Exact Location",
+      title: "Pipe Bursted",
+      body: "My Name is Andrew Qi Ming Fan and my pipe burst in my basement. I am sad but I love men",
+      location: "49.266688,-123.2470016",
+      comments: ["hooray", "yippee"],
+      likes: 5,
+    },
+  ];
 
   return (
     <div className="App">

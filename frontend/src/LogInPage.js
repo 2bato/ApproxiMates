@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./App.css";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
-import { Link, Router } from "react-router-dom"; 
+import { Link, Router } from "react-router-dom";
+import { User, UserContext } from "./components/Context/User";
 
-// export const UserContext = React.createContext({});
 
 function LoginPage() {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState({});
+  const { user, setActiveUser } = useContext(UserContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -18,9 +19,8 @@ function LoginPage() {
   };
 
   function handleSignOut(event) {
-    setUser({});
+    setActiveUser({});
   }
-
 
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
@@ -30,9 +30,12 @@ function LoginPage() {
           className="bg-gray-800 shadow-md rounded px-8 pt-6 pb-8 mb-4"
         >
           <div className="mb-4">
-            <h1 className="ml-14 text-white font-bold text-lg mb-5">
-              Welcome Back!
-            </h1>
+            <div className="flex justify-center">
+              <h1 className="text-white font-bold text-lg mb-5">
+                Welcome Back!
+              </h1>
+            </div>
+
             <input
               className="bg-gray-700 shadow appearance-none rounded w-full py-2 px-3 text-white leading-tight focus:outline-none focus:shadow-outline"
               id="email"
@@ -50,10 +53,10 @@ function LoginPage() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-center">
             <Link to="/App">
               <button
-                className="w-3/6 m-auto bg-white text-black font-bold py-2 px-4 rounded-lg"
+                className="bg-white text-black font-bold py-2 px-4 rounded-lg"
                 type="submit"
               >
                 Login
@@ -61,20 +64,21 @@ function LoginPage() {
             </Link>
           </div>
 
-          <div className="ml-28 mt-4">
+          <div className="flex mt-4 justify-center">
             <h1 className="text-white font-bold justify-center items-center">
               OR
             </h1>
           </div>
 
-          <div className="mt-4 ml-2">
+          <div className="flex justify-center mt-4">
             <GoogleLogin
               onSuccess={(credentialResponse) => {
                 const credentialResponseDecoded = jwtDecode(
                   credentialResponse.credential
                 );
-                console.log(credentialResponseDecoded);
-                setUser(credentialResponseDecoded);
+                setActiveUser(credentialResponseDecoded);
+                console.log(user);
+
               }}
               onError={() => {
                 console.log("Login Failed");

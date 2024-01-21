@@ -6,7 +6,7 @@ function FilterButtons() {
   return (
     <header className="header pt-20">
       <div>
-        <ul className="px-2 overflow-x-auto mt-2 items-center justify-center flex space-x-3">
+        <ul className="px-2 overflow-x-auto justify-center mt-2 items-center flex space-x-3">
           <button className={b}>Alerts</button>
           <button className={b}>Marketplace</button>
           <button className={b}>Services</button>
