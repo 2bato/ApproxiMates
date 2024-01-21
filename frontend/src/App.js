@@ -8,9 +8,6 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import ProfilePage from "./components/ProfilePage";
 import React from 'react';
-import { AuthProvider } from 'react-auth-kit'
-import RouteComponent from './routes';
-import { GoogleLogin } from '@react-oauth/google';
 
 
 
@@ -33,7 +30,7 @@ function App() {
 
   const fetchPosts = () => {
     axios
-      .get("http://localhost:8000/api/posts")
+      .get("http://localhost:5000/api/post")
       .then((res) => {
         setPosts(res.data);
       })
@@ -44,7 +41,7 @@ function App() {
 
   const addPostHandler = (post) => {
     axios
-      .post("http://localhost:8000/api/posts", post)
+      .post("http://localhost:5000/api/post", post)
       .then(() => {
         fetchPosts();
       })
@@ -55,7 +52,7 @@ function App() {
 
   const removePostHandler = (postId) => {
     axios
-      .delete(`http://localhost:8000/api/posts/${postId}`)
+      .delete(`http://localhost:5000/api/post/${postId}`)
       .then((res) => {
         fetchPosts();
       })
@@ -88,6 +85,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      {console.log(posts)}
       <PostMain
         type="Service"
         locationType="Exact Location"
@@ -98,18 +96,20 @@ function App() {
         likes={5}
       />
 
-      <PostBox posts={placeholder} />
+      <PostBox posts={posts} />
       <PopupInput />
 
       <ProfilePage />
+      
+      <div style = {{height: "50px"}}>
+
+      </div>
 
       <div className="fixed bottom-0 left-0 w-full mb-3">
         <Footer />
       </div>
 
-      <AuthProvider store={store}>
-      <RoutesComponent/>
-    </AuthProvider>
+      
     </div>
   );
 }

@@ -5,25 +5,29 @@ const PostSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  title: {
+  locationType: {
     type: String,
     required: true,
   },
-  location: {
+  title: {
     type: String,
     required: true,
   },
   body: {
     type: String,
   },
-  image: {
-    type: URL,
+  location: {
+    type: String,
+    required: true,
   },
-  $home: {
-    type: Boolean,
-    default: true,
+  comments: {
+    type: Array,
+  },
+  likes: {
+    type: Number,
+    default: 0,
     required: true,
   },
 });
 
-module.exports = post = mongoose.model("post", PostSchema);
+module.exports = mongoose.model("post", PostSchema);
