@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { TabContext } from "./Context/Tabs";
+import { useContext } from "react";
 
 function goToTop() {
   window.scrollTo(0, 0);
@@ -11,6 +13,7 @@ const CreatePost = ({ onAddNewPost }) => {
   const [enteredBody, setEnteredBody] = useState("");
   const [enteredComments, setEnteredComments] = useState([]);
   const [enteredLikes, setEnteredLikes] = useState(0);
+  const { activeTab, switchTab } = useContext(TabContext);
 
   let currentLocation;
   if (navigator.geolocation) {
@@ -51,6 +54,13 @@ const CreatePost = ({ onAddNewPost }) => {
     setEnteredLikes(event.target.value);
   };
 
+  let isHome;
+  if (activeTab === 0) {
+    isHome = false;
+  } else {
+    isHome = true;
+  }
+
   const submitHandler = (event) => {
     event.preventDefault();
     console.log(currentLocation);
@@ -63,6 +73,7 @@ const CreatePost = ({ onAddNewPost }) => {
       location: currentLocation,
       comments: enteredComments,
       likes: enteredLikes,
+      home: isHome,
     };
 
     onAddNewPost(postData);

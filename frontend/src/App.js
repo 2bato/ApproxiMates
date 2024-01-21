@@ -22,10 +22,14 @@ function goToTop() {
 function App() {
   const [posts, setPosts] = useState([]);
   const { activeTab, switchTab } = useContext(TabContext);
+  const homePosts = posts.filter(post => post.home === true);
+  const currentPosts = posts.filter(post => post.home === false);
+
+
   const TabContent1 = () => (
     <div>
       <Header />
-      <PostBox posts={posts} />
+      <PostBox posts={currentPosts} />
       <CreatePost onAddNewPost={addPostHandler} />
     </div>
   );
@@ -33,7 +37,7 @@ function App() {
   const TabContent2 = () => (
     <div>
       <Header />
-      <PostBox posts={posts} />
+      <PostBox posts={homePosts} />
       <CreatePost onAddNewPost={addPostHandler} />
     </div>
   );
