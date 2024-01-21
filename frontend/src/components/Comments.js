@@ -1,10 +1,21 @@
 import React, { useState } from "react";
 
-const Comments = ({ comments }) => {
+const Comments = ({ comments, onEditPost, id }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [newComment, setNewComment] = useState("");
 
   const clickHandler = () => {
     setIsOpen(!isOpen);
+  };
+
+  const submitComment = () => {
+    if (newComment.trim() !== "") {
+      const updatedComments = [...comments, newComment];
+
+      onEditPost(id, updatedComments);
+
+      setNewComment("");
+    }
   };
 
   return (
@@ -20,13 +31,26 @@ const Comments = ({ comments }) => {
         </svg>
         <p className="ml-2">{comments.length} comments</p>
       </button>
-      {isOpen && (
+      <div style={{ display: isOpen ? "block" : "none" }}>
+        {comments.map((comment, index) => (
+          <div key={index}>{comment}</div>
+        ))}
         <div>
-          {comments.map((comment, index) => (
-            <div key={index}>{comment}</div>
-          ))}
+          <input
+            type="text"
+            value={newComment}
+            onChange={(e) => setNewComment(e.target.value)}
+            placeholder="Add your comment..."
+            className="focus:outline-none"
+          />
+          <button
+            onClick={submitComment}
+            className="border p-1 border-2 rounded-lg border-gray-500 text-sm"
+          >
+            Reply
+          </button>
         </div>
-      )}
+      </div>
     </div>
   );
 };

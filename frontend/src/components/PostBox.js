@@ -1,6 +1,6 @@
 import PostMain from "./PostMain";
 
-const PostBox = ({ posts }) => {
+const PostBox = ({ posts, onEditPost }) => {
   const reversedPosts = [...posts].reverse();
   return (
     <div className="my-20">
@@ -13,6 +13,8 @@ const PostBox = ({ posts }) => {
           location={post.location}
           comments={post.comments}
           likes={post.likes}
+          onEditPost={onEditPost}
+          id={post._id}
         />
       ))}
     </div>

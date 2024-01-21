@@ -7,14 +7,41 @@ import CreatePost from "./components/CreatePost";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ProfilePage from "./components/ProfilePage";
-import React from 'react';
-import { AuthProvider } from 'react-auth-kit'
-import { GoogleLogin } from '@react-oauth/google';
-
-
+import { AuthProvider } from "react-auth-kit";
+import { GoogleLogin } from "@react-oauth/google";
+import React, { useContext } from "react";
+import Pin from "./components/Images/marker2.png";
+import House from "./components/Images/house2.png";
+import Profile from "./components/Images/person2.png";
+import { TabContext } from "./components/Context/Tabs";
 
 function App() {
   const [posts, setPosts] = useState([]);
+  const { activeTab, switchTab } = useContext(TabContext);
+  const tabs = ["current", "home", "profile"];
+  const TabContent1 = () => (
+    <div>
+      <Header />
+      <PostBox posts={posts} />
+      <CreatePost onAddNewPost={addPostHandler} />
+    </div>
+  );
+
+  const TabContent2 = () => (
+    <div>
+      {/* Add home tab content */}
+    </div>
+  );
+
+  const TabContent3 = () => (
+    <div>
+      {/* Add profile content */}
+    </div>
+  );
+
+  const tabClickHandler = (tabIndex) => {
+    switchTab(tabIndex);
+  };
 
   useEffect(() => {
     fetchPosts();
@@ -25,7 +52,7 @@ function App() {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
       console.log(`Latitude: ${latitude}, Longitude: ${longitude}`);
-      const currentLocation = latitude + ',' + longitude;
+      const currentLocation = latitude + "," + longitude;
     });
   } else {
     console.log("Geolocation is not supported by this browser.");
@@ -53,6 +80,17 @@ function App() {
       });
   };
 
+  const editPostHandler = (postId, updatedPostData) => {
+    axios
+      .put(`http://localhost:5000/api/post/${postId}`, updatedPostData)
+      .then((res) => {
+        fetchPosts();
+      })
+      .catch((err) => {
+        console.log("Error in editPostHandler", err);
+      });
+  };
+
   const removePostHandler = (postId) => {
     axios
       .delete(`http://localhost:5000/api/post/${postId}`)
@@ -66,20 +104,47 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      {console.log(posts)}
-
-      <PostBox posts={posts} />
-      <CreatePost onAddNewPost={addPostHandler}/>
-
-      <ProfilePage />
-      
-      <div style = {{height: "50px"}}>
-
+      <div className="mb-20">
+        {activeTab === 0 && <TabContent1 />}
+        {activeTab === 1 && <TabContent2 />}
+        {activeTab === 2 && <TabContent3 />}
       </div>
-
-      <div className="fixed bottom-0 left-0 w-full mb-3">
-        <Footer />
+      <div className="bg-white fixed bottom-0 left-0 w-full">
+        <div className="mt-2 items-center justify-center w-full inline-flex cursor-pointer gap-12">
+          <button
+            key={0}
+            className={
+              0 === activeTab
+                ? "rounded-lg bg-cover bg-gray-200 inline-flex h-12 w-12 items-center justify-center"
+                : "inline-flex h-12 w-12 items-center justify-center"
+            }
+            onClick={() => tabClickHandler(0)}
+          >
+            <img class="h-10 w-10" src={Pin} alt="Logo" />
+          </button>
+          <button
+            key={1}
+            className={
+              1 === activeTab
+                ? "rounded-lg bg-cover bg-gray-200 inline-flex h-12 w-12 items-center justify-center"
+                : "inline-flex h-12 w-12 items-center justify-center"
+            }
+            onClick={() => tabClickHandler(1)}
+          >
+            <img class="h-10 w-10" src={House} alt="Logo" />
+          </button>
+          <button
+            key={2}
+            className={
+              2 === activeTab
+                ? "rounded-lg bg-cover bg-gray-200 inline-flex h-12 w-12 items-center justify-center"
+                : "inline-flex h-12 w-12 items-center justify-center"
+            }
+            onClick={() => tabClickHandler(2)}
+          >
+            <img class="h-10 w-10" src={Profile} alt="Logo" />
+          </button>
+        </div>
       </div>
     </div>
   );
