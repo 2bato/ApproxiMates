@@ -1,14 +1,10 @@
 import "./App.css";
-import Footer from "./components/Footer";
-import PostMain from "./components/PostMain";
+
 import Header from "./components/Header";
 import PostBox from "./components/PostBox";
 import CreatePost from "./components/CreatePost";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import ProfilePage from "./components/ProfilePage";
-import { AuthProvider } from "react-auth-kit";
-import { GoogleLogin } from "@react-oauth/google";
 import React, { useContext } from "react";
 import Pin from "./components/Images/marker2.png";
 import House from "./components/Images/house2.png";
@@ -22,10 +18,14 @@ function goToTop() {
 function App() {
   const [posts, setPosts] = useState([]);
   const { activeTab, switchTab } = useContext(TabContext);
+  const homePosts = posts.filter(post => post.home === true);
+  const currentPosts = posts.filter(post => post.home === false);
+
+
   const TabContent1 = () => (
     <div>
       <Header />
-      <PostBox posts={posts} />
+      <PostBox posts={currentPosts} />
       <CreatePost onAddNewPost={addPostHandler} />
     </div>
   );
@@ -33,7 +33,7 @@ function App() {
   const TabContent2 = () => (
     <div>
       <Header />
-      <PostBox posts={posts} />
+      <PostBox posts={homePosts} />
       <CreatePost onAddNewPost={addPostHandler} />
     </div>
   );
