@@ -4,6 +4,7 @@ import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 import { Link, Router } from "react-router-dom";
 import { User, UserContext } from "./components/Context/User";
+import { useNavigate } from "react-router-dom";
 
 
 function LoginPage() {
@@ -11,6 +12,8 @@ function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { user, setActiveUser } = useContext(UserContext);
+  const navigate = useNavigate();
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -72,12 +75,15 @@ function LoginPage() {
 
           <div className="flex justify-center mt-4">
             <GoogleLogin
-              onSuccess={(credentialResponse) => {
+              onSuccess={async (credentialResponse) => {
                 const credentialResponseDecoded = jwtDecode(
                   credentialResponse.credential
                 );
                 setActiveUser(credentialResponseDecoded);
                 console.log(user);
+                setTimeout(() => {
+                  navigate("/App");
+                }, 1200);
 
               }}
               onError={() => {
