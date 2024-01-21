@@ -2,17 +2,17 @@ import "./App.css";
 import Footer from "./components/Footer";
 import PostMain from "./components/PostMain";
 import Header from "./components/Header";
-import PostBox from "./components/PostBox";
 
 function App() {
   return (
     <div className="App">
       <Header />
       <PostBox />
-
-
       <PostMain 
-      type=""/>
+      type="Service"
+      locationType="Exact Location"
+      title="Pipe Bursted"
+      description="My Name is Andrew Qi Ming Fan and my pipe burst in my basement. I am sad but I love men"/>
 
         
 
