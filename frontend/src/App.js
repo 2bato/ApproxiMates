@@ -8,6 +8,16 @@ function App() {
   return (
     <div className="App">
       <Header />
+<<<<<<< HEAD
+      <PostBox />
+      <PostMain
+        type="Service"
+        locationType="Exact Location"
+        title="Pipe Bursted"
+        description="My Name is Andrew Qi Ming Fan and my pipe burst in my basement. I am sad but I love men"
+      />
+
+=======
       <PostMain 
         type="Service"
         locationType="Exact Location"
@@ -17,6 +27,7 @@ function App() {
           
 
       
+>>>>>>> 4caa09a329710f3a8246d309b2c9e2b9c05fd659
       <div className="fixed bottom-0 left-0 w-full mb-3">
         <Footer />
       </div>

@@ -1,9 +1,5 @@
 function PostBox() {
-    return (
-        <div>
-            hello
-        </div>
-    );
+  return <div>hello</div>;
 }
 
 export default PostBox;
