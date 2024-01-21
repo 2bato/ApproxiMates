@@ -144,7 +144,7 @@ const CreatePost = ({ onAddNewPost }) => {
               <label>Title: </label>
               <input
                 type="text"
-                className="font-bold mb-2 border-2 border-black"
+                className="rounded-lg focus:outline-none font-bold mb-2 border-2 border-black"
                 onChange={titleChangeHandler}
                 value={enteredTitle}
               ></input>
@@ -152,7 +152,7 @@ const CreatePost = ({ onAddNewPost }) => {
               <label>Description: </label>
               <textarea
                 rows="4"
-                className="font-bold mb-2 border-2 border-black"
+                className="rounded-lg focus:outline-none font-bold mb-2 border-2 border-black"
                 onChange={bodyChangeHandler}
                 value={enteredBody}
               ></textarea>
