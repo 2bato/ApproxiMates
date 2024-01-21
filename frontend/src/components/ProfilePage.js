@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import { setGlobalState, useGlobalState } from "../LogInPage";
+import { Link, Router } from "react-router-dom";
 
 function ProfilePage(props) {
   const [editProfile, setEditProfile] = useState(false);
@@ -100,6 +101,14 @@ function ProfilePage(props) {
           //</div></button>
           //</div>
         }
+      </div>
+
+      <div className="flex justify-center">
+        <Link to="/">
+        <div className="border-4 border-black rounded-lg w-fit p-3 cursor-pointer">
+          <h1>Back to Log In</h1>
+        </div>
+        </Link>
       </div>
       <Footer />
     </div>
