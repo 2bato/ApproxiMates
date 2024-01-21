@@ -14,9 +14,8 @@ function goToTop() {
 function Header() {
   return (
     <header className="pt-2 bg-white w-full header top-0 left-0 w-full h-60px">
-      <div className="fixed">
-        <div className="space-x-1 items-center justify-center w-full flex cursor-pointer ">
-          <img class="h-16 w-16" src={ApproxiMates} alt="Logo" />
+      <div className="space-x-1 items-center justify-center w-full flex cursor-pointer ">
+        <img class="h-16 w-16" src={ApproxiMates} alt="Logo" />
 
         <button
           onClick={goToBottom}
@@ -37,8 +36,9 @@ function Header() {
             />
           </svg>
         </button>
+
+        <div className="mt-1" style={grayStripStyle} />
       </div>
-      <div className="mt-1" style={grayStripStyle} />
     </header>
   );
 }
