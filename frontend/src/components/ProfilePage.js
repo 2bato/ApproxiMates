@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import { setGlobalState, useGlobalState } from "../LogInPage";
+import { Link, Router } from "react-router-dom";
 
 function ProfilePage(props) {
   const [editProfile, setEditProfile] = useState(false);
@@ -32,7 +33,7 @@ function ProfilePage(props) {
               setFile(URL.createObjectURL(e.target.files[0]));
             }}
           />
-          <img src={file} style={{ maxWidth: '50%', maxHeight: '50%' }} />
+          <img src={file} style={{ maxWidth: "50%", maxHeight: "50%" }} />
           <button
             className=" bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-1 px-2 rounded"
             onClick={() => setEditProfile(!editProfile)}
@@ -55,13 +56,26 @@ function ProfilePage(props) {
   return (
     <div>
       <Header />
-      <h1 className="mt-20 mb-5" style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}>
+      <h1
+        className="mt-20 mb-5"
+        style={{
+          fontSize: "24px",
+          fontWeight: "bold",
+          fontFamily: "Arial, sans-serif",
+        }}
+      >
         Welcome {username}
       </h1>
       <div className="space-y-6 mb-40 flex-col flex justify-center">
         <div className="justify-center flex">
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full min-h-24 rounded-full" 
-                  style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}>
+          <button
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full min-h-24 rounded-full"
+            style={{
+              fontSize: "24px",
+              fontWeight: "bold",
+              fontFamily: "Arial, sans-serif",
+            }}
+          >
             My Posts
           </button>
         </div>
@@ -70,7 +84,11 @@ function ProfilePage(props) {
           <button
             className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold w-full min-h-24 rounded-full"
             onClick={() => setEditProfile(!editProfile)}
-            style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}
+            style={{
+              fontSize: "24px",
+              fontWeight: "bold",
+              fontFamily: "Arial, sans-serif",
+            }}
           >
             {editProfile ? "save profile" : "edit profile"}
           </button>
@@ -83,6 +101,14 @@ function ProfilePage(props) {
           //</div></button>
           //</div>
         }
+      </div>
+
+      <div className="flex justify-center">
+        <Link to="/">
+        <div className="border-4 border-black rounded-lg w-fit p-3 cursor-pointer">
+          <h1>Back to Log In</h1>
+        </div>
+        </Link>
       </div>
       <Footer />
     </div>
