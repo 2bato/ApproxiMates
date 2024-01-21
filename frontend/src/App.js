@@ -8,7 +8,10 @@ function App() {
     <div className="App">
 
       <PostMain 
-      type=""/>
+      type="Service"
+      locationType="Exact Location"
+      title="Pipe Bursted"
+      description="My Name is Andrew Qi Ming Fan and my pipe burst in my basement. I am sad but I love men"/>
 
         
 
