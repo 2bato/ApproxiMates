@@ -41,9 +41,8 @@ function Header() {
             />
           </svg>
         </button>
-
-        <div className="mt-1" style={grayStripStyle} />
       </div>
+      <div className="mt-1" style={grayStripStyle} />
     </header>
   );
 }
