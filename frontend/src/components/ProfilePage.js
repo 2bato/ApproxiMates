@@ -56,61 +56,63 @@ function ProfilePage(props) {
   return (
     <div>
       <Header />
-      <h1
-        className="mt-20 mb-5"
-        style={{
-          fontSize: "24px",
-          fontWeight: "bold",
-          fontFamily: "Arial, sans-serif",
-        }}
-      >
-        Welcome {username}
-      </h1>
-      <div className="space-y-6 mb-40 flex-col flex justify-center">
-        <div className="justify-center flex">
-          <button
-            class="bg-black hover:bg-blue-700 text-white font-bold w-full min-h-24 rounded-full"
-            style={{
-              fontSize: "24px",
-              fontWeight: "bold",
-              fontFamily: "Arial, sans-serif",
-            }}
-          >
-            My Posts
-          </button>
+      <div className="mt-24 mb-5">
+        <h1
+          className="mt-20 mb-5 flex justify-center"
+          style={{
+            fontSize: "24px",
+            fontWeight: "bold",
+            fontFamily: "Arial, sans-serif",
+          }}
+        >
+          Welcome {username}
+        </h1>
+        <div className="space-y-8 pt-8 mb-40 flex-col flex justify-center">
+          <div className="justify-center flex">
+            <button
+              class="bg-black hover:bg-blue-700 text-white font-bold w-full min-h-24 rounded-full"
+              style={{
+                fontSize: "24px",
+                fontWeight: "bold",
+                fontFamily: "Arial, sans-serif",
+              }}
+            >
+              My Posts
+            </button>
+          </div>
+          {editProfile ? editScreen : profileScreen}
+          <div className="pt-5">
+            <button
+              className="bg-gray-500 hover:bg-emerald-700 text-white font-bold w-full min-h-24 rounded-full"
+              onClick={() => setEditProfile(!editProfile)}
+              style={{
+                fontSize: "24px",
+                fontWeight: "bold",
+                fontFamily: "Arial, sans-serif",
+              }}
+            >
+              {editProfile ? "Save Profile" : "Edit Profile"}
+            </button>
+          </div>
+          {
+            //<div className="pt-10">
+            //<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full min-h-24 rounded-full"
+            //       style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}>
+            //</div>  Saved Posts
+            //</div></button>
+            //</div>
+          }
         </div>
-        {editProfile ? editScreen : profileScreen}
-        <div className="pt-5">
-          <button
-            className="bg-gray-500 hover:bg-emerald-700 text-white font-bold w-full min-h-24 rounded-full"
-            onClick={() => setEditProfile(!editProfile)}
-            style={{
-              fontSize: "24px",
-              fontWeight: "bold",
-              fontFamily: "Arial, sans-serif",
-            }}
-          >
-            {editProfile ? "save profile" : "edit profile"}
-          </button>
-        </div>
-        {
-          //<div className="pt-10">
-          //<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full min-h-24 rounded-full"
-          //       style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}>
-          //</div>  Saved Posts
-          //</div></button>
-          //</div>
-        }
-      </div>
 
-      <div className="flex justify-center">
-        <Link to="/">
-        <div className="border-4 border-black rounded-lg w-fit p-3 cursor-pointer">
-          <h1>Back to Log In</h1>
+        <div className="flex justify-center">
+          <Link to="/">
+            <div className="border-4 border-black rounded-lg w-fit p-3 cursor-pointer">
+              <h1>Back to Log In</h1>
+            </div>
+          </Link>
         </div>
-        </Link>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }
