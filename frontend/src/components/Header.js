@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ApproxiMates from "./Images/ApproxiMates.png";
 
-
 function goToBottom() {
   window.scrollTo(0, document.body.scrollHeight);
 }
@@ -41,11 +40,14 @@ function Header() {
           </svg>
         </button>
       </div>
-      <div className="mt-1" style={{
-        height: "5px",
-        width: "100%", 
-        background: "#ccc",
-      }} />
+      <div
+        className="mt-1"
+        style={{
+          height: "5px",
+          width: "100%",
+          background: "#ccc",
+        }}
+      />
     </header>
   );
 }

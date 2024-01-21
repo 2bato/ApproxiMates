@@ -59,7 +59,7 @@ function ProfilePage(props) {
     <div>
       <Header />
       <h1
-        className="mt-20 mb-5"
+        className="mt-20 mb-5 flex justify-center"
         style={{
           fontSize: "24px",
           fontWeight: "bold",
