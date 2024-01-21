@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
-import defaultPFP from "./Images/wold.jpg";
+import defaultPFP from "./Images/marker.png";
 import { setGlobalState, useGlobalState } from "../LogInPage";
 import { Link, Router } from "react-router-dom";
 
@@ -51,7 +51,7 @@ function ProfilePage(props) {
 
   const profileScreen = (
     <div className="flex justify-center items-center">
-      <img src={file} style={{ maxWidth: "90%", maxHeight: "90%" }} />
+      <img src={file} style={{ maxWidth: "60%", maxHeight: "60%" }} />
     </div>
   );
 
@@ -72,7 +72,7 @@ function ProfilePage(props) {
         {editProfile ? editScreen : profileScreen}
         <div className="pt-5">
           <button
-            className="bg-gray-500 hover:bg-emerald-700 text-white font-bold w-full min-h-24 rounded-full"
+            className="bg-gray-500 hover:bg-gray-700 text-white font-bold w-full min-h-24 rounded-full"
             onClick={() => setEditProfile(!editProfile)}
             style={{
               fontSize: "24px",
