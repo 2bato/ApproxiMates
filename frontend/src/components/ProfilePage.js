@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
+import defaultPFP from './Images/default.jpg'
 
 function ProfilePage(props) {
   const [editProfile, setEditProfile] = useState(false);
 
-  const [username, setUsername] = useState("");
-  const [file, setFile] = useState();
+  const [username, setUsername] = useState("Ashley");
+  const [file, setFile] = useState(defaultPFP);
 
   const editScreen = (
     <div className="flex justify-center items-center inset-0 size-full bg-black fixed bg-opacity-30 backdrop-blur-sm">
@@ -24,13 +25,16 @@ function ProfilePage(props) {
           />
 
           <h2>Upload Profile Picture</h2>
-          <input
-            className="ml-8"
-            type="file"
-            onChange={(e) => {
-              setFile(URL.createObjectURL(e.target.files[0]));
-            }}
-          />
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <input
+              className="ml-4 mr-4"
+              type="file"
+              onChange={(e) => {
+                setFile(URL.createObjectURL(e.target.files[0]));
+              }}
+            />
+          </div>
+
           <img src={file} style={{ maxWidth: '50%', maxHeight: '50%' }} />
           <button
             className=" bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-1 px-2 rounded"
@@ -44,34 +48,33 @@ function ProfilePage(props) {
   );
 
   const profileScreen = (
-    <div className="text-left ml-6">
-      {username}
-      <img src={file} style={{ paddingRight: "24px" }} />
-      {/*gonna need u to list users posts under hear andrew, idk how to get those from backend*/}
+    <div className="flex justify-center items-center">
+      <img src={file} style={{ maxWidth: '90%', maxHeight: '90%' }} />
     </div>
   );
 
   return (
     <div>
       <Header />
-      <h1 className="mt-20 mb-5" style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}>
+      <h1 className="mt-20 ml-4" style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}>
         Welcome {username}
       </h1>
       <div className="space-y-6 mb-40 flex-col flex justify-center">
-        <div className="justify-center flex">
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full min-h-24 rounded-full" 
-                  style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}>
-            My Posts
-          </button>
-        </div>
         {editProfile ? editScreen : profileScreen}
         <div className="pt-5">
-          <button
-            className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold w-full min-h-24 rounded-full"
-            onClick={() => setEditProfile(!editProfile)}
-            style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}
-          >
-            {editProfile ? "save profile" : "edit profile"}
+        <button
+          className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold w-full min-h-24 rounded-md"
+          onClick={() => setEditProfile(!editProfile)}
+          style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}
+        >
+          {editProfile ? "Save Profile" : "Edit Profile"}
+        </button>
+
+        </div>
+        <div className="justify-center flex">
+          <button class="bg-blue-500 hover:bg-emerald-700 text-white font-bold w-full min-h-24 rounded-md"
+                  style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}>
+            My Posts
           </button>
         </div>
         {
