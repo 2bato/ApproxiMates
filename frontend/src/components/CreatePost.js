@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 
+function goToTop() {
+  window.scrollTo(0, 0);
+}
 
 const CreatePost = ({ onAddNewPost }) => {
   const [enteredType, setEnteredType] = useState("");
@@ -118,13 +121,14 @@ const CreatePost = ({ onAddNewPost }) => {
               ></input>
 
               <label>Description: </label>
-              <input
-                type="text"
+              <textarea
+                rows="4" 
                 className="font-bold mb-2 border-2 border-black"
                 onChange={bodyChangeHandler}
-              ></input>
+              ></textarea>
 
               <button
+                onClick={goToTop}
                 type="submit"
                 className="justify-center mt-2 border-2 border-black w-20"
               >
