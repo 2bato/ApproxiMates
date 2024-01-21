@@ -78,16 +78,6 @@ function ProfilePage(props) {
             My Posts
           </button>
         </div>
-        {editProfile ? editScreen : profileScreen}
-        <div className="pt-5">
-          <button
-            className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold w-full min-h-24 rounded-full"
-            onClick={() => setEditProfile(!editProfile)}
-            style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}
-          >
-            {editProfile ? "save profile" : "edit profile"}
-          </button>
-        </div>
         {
           //<div className="pt-10">
           //<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full min-h-24 rounded-full"
