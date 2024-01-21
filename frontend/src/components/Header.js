@@ -25,4 +25,3 @@ const grayStripStyle = {
 };
 
 export default Header;
-
