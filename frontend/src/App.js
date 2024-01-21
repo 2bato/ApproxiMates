@@ -30,7 +30,7 @@ function App() {
 
   const fetchPosts = () => {
     axios
-      .get("http://localhost:8000/api/posts")
+      .get("http://localhost:5000/api/post")
       .then((res) => {
         setPosts(res.data);
       })
@@ -41,7 +41,7 @@ function App() {
 
   const addPostHandler = (post) => {
     axios
-      .post("http://localhost:8000/api/posts", post)
+      .post("http://localhost:5000/api/post", post)
       .then(() => {
         fetchPosts();
       })
@@ -52,7 +52,7 @@ function App() {
 
   const removePostHandler = (postId) => {
     axios
-      .delete(`http://localhost:8000/api/posts/${postId}`)
+      .delete(`http://localhost:5000/api/post/${postId}`)
       .then((res) => {
         fetchPosts();
       })
@@ -85,6 +85,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      {console.log(posts)}
       <PostMain
         type="Service"
         locationType="Exact Location"
@@ -95,7 +96,7 @@ function App() {
         likes={5}
       />
 
-      <PostBox posts={placeholder} />
+      <PostBox posts={posts} />
       <PopupInput />
 
       <ProfilePage />
@@ -104,6 +105,7 @@ function App() {
         <Footer />
       </div>
 
+      
     </div>
   );
 }
