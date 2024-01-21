@@ -11,7 +11,7 @@ function Header() {
 
         <button
           className="ml-4 inline-flex items-center mt-2"
-          style={{ width: "250px" }}
+          style={{ width: "235px" }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
