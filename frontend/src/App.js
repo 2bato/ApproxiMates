@@ -8,8 +8,14 @@ function App() {
     <div className="App">
       <Header />
 
-      <div className="fixed bottom-0 left-0 w-full mb-3">
-        <Footer />
+      <PostMain 
+      type=""/>
+
+        
+
+      
+        <div className="fixed bottom-0 left-0 w-full mb-3">
+          <Footer />
       </div>
     </div>
   );
