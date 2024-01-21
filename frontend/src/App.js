@@ -2,7 +2,6 @@ import "./App.css";
 import Footer from "./components/Footer";
 import PostMain from "./components/PostMain";
 import Header from "./components/Header";
-import PostBox from "./components/PostBox";
 
 function App() {
   return (
