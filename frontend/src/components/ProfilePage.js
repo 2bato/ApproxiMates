@@ -27,7 +27,7 @@ function ProfilePage(props) {
           />
 
           <h2>Upload Profile Picture</h2>
-          <div style={{ display: 'flex', alignItems: 'center' }}>
+          <div style={{ display: "flex", alignItems: "center" }}>
             <input
               className="ml-4 mr-4"
               type="file"
@@ -37,7 +37,7 @@ function ProfilePage(props) {
             />
           </div>
 
-          <img src={file} style={{ maxWidth: '50%', maxHeight: '50%' }} />
+          <img src={file} style={{ maxWidth: "50%", maxHeight: "50%" }} />
           <button
             className=" bg-gray-500 hover:bg-emerald-600 text-white font-bold py-1 px-2 rounded"
             onClick={() => setEditProfile(!editProfile)}
@@ -51,7 +51,7 @@ function ProfilePage(props) {
 
   const profileScreen = (
     <div className="flex justify-center items-center">
-      <img src={file} style={{ maxWidth: '90%', maxHeight: '90%' }} />
+      <img src={file} style={{ maxWidth: "90%", maxHeight: "90%" }} />
     </div>
   );
 
@@ -80,13 +80,13 @@ function ProfilePage(props) {
               fontFamily: "Arial, sans-serif",
             }}
           >
-            {editProfile ? "save profile" : "edit profile"}
+            {editProfile ? "Save Profile" : "Edit Profile"}
           </button>
         </div>
-
+        
         <div className="justify-center flex">
           <button
-            class="bg-black hover:bg-blue-700 text-white font-bold w-full min-h-24 rounded-md"
+            class="bg-black hover:bg-blue-700 text-white font-bold w-full min-h-24 rounded-full"
             style={{
               fontSize: "24px",
               fontWeight: "bold",
@@ -96,25 +96,16 @@ function ProfilePage(props) {
             My Posts
           </button>
         </div>
-        
-        {
-          //<div className="pt-10">
-          //<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full min-h-24 rounded-full"
-          //       style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}>
-          //</div>  Saved Posts
-          //</div></button>
-          //</div>
-        }
-      </div>
 
-      <div className="flex justify-center">
-        <Link to="/">
-        <div className="border-4 border-black rounded-lg w-fit p-3 cursor-pointer">
-          <h1>Back to Log In</h1>
+        <div className="flex justify-center">
+          <Link to="/">
+            <div className="border-4 border-black rounded-lg w-fit p-3 cursor-pointer">
+              <h1>Back to Log In</h1>
+            </div>
+          </Link>
         </div>
-        </Link>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }
