@@ -6,7 +6,7 @@ import FilterButtons from "./FilterButtons";
 function Header() {
   const [buttonText, setButtonText] = useState(false);
   return (
-    <header className="bg-white w-full header fixed">
+    <header className="pt-1 bg-white w-full header fixed">
       <ul style={{ display: "flex", alignItems: "center", height: "60px" }}>
         <img class="h-16 w-16" src={ApproxiMates} alt="Logo" />
 
