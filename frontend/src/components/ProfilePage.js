@@ -38,7 +38,7 @@ function ProfilePage(props) {
 
           <img src={file} style={{ maxWidth: '50%', maxHeight: '50%' }} />
           <button
-            className=" bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-1 px-2 rounded"
+            className=" bg-gray-500 hover:bg-emerald-600 text-white font-bold py-1 px-2 rounded"
             onClick={() => setEditProfile(!editProfile)}
           >
             {editProfile ? "Save Profile" : "Edit Profile"}
@@ -73,9 +73,19 @@ function ProfilePage(props) {
 
         </div>
         <div className="justify-center flex">
-          <button class="bg-blue-500 hover:bg-emerald-700 text-white font-bold w-full min-h-24 rounded-md"
+          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold w-full min-h-24 rounded-full" 
                   style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}>
             My Posts
+          </button>
+        </div>
+        {editProfile ? editScreen : profileScreen}
+        <div className="pt-5">
+          <button
+            className="bg-emerald-500 hover:bg-emerald-700 text-white font-bold w-full min-h-24 rounded-full"
+            onClick={() => setEditProfile(!editProfile)}
+            style={{ fontSize: '24px', fontWeight: 'bold', fontFamily: 'Arial, sans-serif' }}
+          >
+            {editProfile ? "save profile" : "edit profile"}
           </button>
         </div>
         {
