@@ -72,7 +72,7 @@ function ProfilePage(props) {
         {editProfile ? editScreen : profileScreen}
         <div className="pt-5">
           <button
-            className="bg-gray-500 hover:bg-emerald-700 text-white font-bold w-full min-h-24 rounded-md"
+            className="bg-gray-500 hover:bg-emerald-700 text-white font-bold w-full min-h-24 rounded-full"
             onClick={() => setEditProfile(!editProfile)}
             style={{
               fontSize: "24px",
