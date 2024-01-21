@@ -6,12 +6,8 @@ function ProfilePage(props) {
     const [username, setUsername] = useState("");
     const [file, setFile] = useState();
     
-
-    return (
+    const editScreen = (
         <div>
-            <button onClick={() => setEditProfile(!editProfile)}>
-                edit profile
-            </button>
             <h2>
                 change username
             </h2>
@@ -22,7 +18,16 @@ function ProfilePage(props) {
             <input type = 'file' onChange={(e) => {setFile(URL.createObjectURL(e.target.files[0]));}}/>
             <img src = {file}/>
         </div>
-    );
+    )
+    
+    return (
+        <div>
+            {editProfile ? editScreen : <div value = 'test dive for the non edit screen'/>}
+            <button onClick={() => setEditProfile(!editProfile)}>
+                {editProfile ? 'save profile' : 'edit profile'}
+            </button>
+        </div>
+        );
 }
 
 export default ProfilePage;
