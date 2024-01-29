@@ -1,8 +1,8 @@
-# LocationConnect - Social Media App
+# ApproxiMates - Social Media App
 
 ## Overview
 
-LocationConnect is a location-based social media app that allows users to connect with others in their vicinity through posts ranging from alerts to trade offers, to humorous content. The app leverages geolocation services to display posts within a specified geographical range, enabling users to engage with content relevant to their current location. With customizable filters, users can tailor their feed to match their preferences and interests.
+ApproxiMates is a location-based social media app that allows users to connect with others in their vicinity through posts ranging from alerts to trade offers, to humorous content. The app leverages geolocation services to display posts within a specified geographical range, enabling users to engage with content relevant to their current location. With customizable filters, users can tailor their feed to match their preferences and interests.
 
 ## Features
 
